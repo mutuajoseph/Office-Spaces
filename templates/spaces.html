@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="container search-space-section">
+    <h2 class="text-center">Place a search form here to auto filter records</h2>
+</section>
+
+<section class="container space--section">
+
+    {% if spaces %}
+    {% for space in spaces %}
+    <a href="{% url 'space' space.pk %}">
+        <div class="card-section">
+            <img src="{{space.space_image.url}}" class="card-img-top space--image" alt="{{ space.space_name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ space.space_name }}</h5>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+    {% else %}
+    <div class="no-results-section">
+        <p>No results found</p>
+    </div>
+    {% endif %}
+</section>
+
+{% endblock %}
