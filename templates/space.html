@@ -1,7 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section>
-    A single space with more details
+<section class="container space-detail-section">
+    <div class="d-flex align-items-center" style="margin-bottom: 20px;">
+        <ion-icon name="arrow-back"></ion-icon>
+        <div style="margin-left: 10px;">Back to Spaces</div>
+    </div>
+    <div class="card mb-3" style="max-width: 100vw;">
+        <div class="row g-0">
+          <div class="col-md-5">
+            <img src="{{ space.space_image.url}}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h5 class="card-title">{{space.space_name}}</h5>
+              <p class="card-text">{{space.space_description}}</p>
+              <p class="card-text"><small class="text-muted">{{space.space_location}}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
 </section>
 {% endblock %}

@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns = [
     path('', views.spaces, name="spaces"),
-    path('<int:id>', views.space, name="space")
+    path('<slug:category_slug>/', views.spaces, name="spaces_by_category"),
+    path('<slug:category_slug>/<slug:space_slug>/', views.space, name="space_detail")
 ]
